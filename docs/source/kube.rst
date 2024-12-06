@@ -72,7 +72,7 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
  
        applied if using Step 9 DAG.
 
-kubectl Create command
+kubectl Apply command
 -----------------
 
 .. important::
