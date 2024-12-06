@@ -279,7 +279,7 @@ privategpt.yml
               - name: DP_DISABLE_HEALTHCHECKS
                 value: xids
               - name: WEB_CONCURRENCY
-                value: "1"
+                value: "2"
               - name: GPU
                 value: "1"
               - name: COLLECTION
