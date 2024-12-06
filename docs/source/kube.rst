@@ -90,19 +90,15 @@ kubectl Create command
 
 .. attention::
 
-   MAKE SURE to update any tokens and passwords in these fields:
+   MAKE SURE to update any tokens and passwords in the secrets.yml file:
 
-          - name: GITPASSWORD (MANDATORY)
-             value: '<ENTER GITHUB PASSWORD>'
-
-          - name: READTHEDOCS (MANDATORY)
-             value: '<ENTER READTHEDOCS TOKEN>'
-
-          - name: KAFKACLOUDPASSWORD (OPTIONAL)
-             value: '<Enter API secret>'
-
-          - name: MQTTPASSWORD (OPTIONAL)
-             value: '<ENTER MQTT PASSWORD>'
+          1. GITPASSWORD (MANDATORY)
+             
+          2. READTHEDOCS (MANDATORY)
+             
+          3. KAFKACLOUDPASSWORD (OPTIONAL)
+             
+          4. MQTTPASSWORD (OPTIONAL)
 
 .. code-block:: YAML
 
@@ -112,6 +108,28 @@ kubectl Create command
 .. tip::
 
    In the solution YAML file above, you can adjust the **replicas** field.  Currently, **replicas: 3** for demonstration purposes. 
+
+secrets.yml
+-----------------
+
+.. important::
+   You MUST store base64 passwords in this file and apply it to the Kubernetes cluster.  
+
+   Refer to section for instructions.
+
+.. code-block:: YAML
+      
+      ###################secrets.yml
+      apiVersion: v1
+      kind: Secret
+      metadata:
+        name: tmlsecrets
+      type: Opaque
+      data:
+        readthedocs: <enter your base64 password>
+        githubtoken: <enter your base64 password>
+        mqttpass: <enter your base64 password>
+        kafkacloudpassword: <enter your base64 password>
 
 mysql-storage.yml
 ------------------------
