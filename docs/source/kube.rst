@@ -45,6 +45,12 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
      - This is your main solution YAML file.  
  
        It MUST be applied to your Kubernetes cluster.
+   * - :ref:`secrets.yml`
+     - You MUST store your passwords in base64 format 
+
+       in this file.  For instructions on how to convert
+
+       plain text passwords to base64 refer to
    * - :ref:`mysql-storage.yml`
      - This is storage allocation for MySQL DB.
  
