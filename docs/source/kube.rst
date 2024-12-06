@@ -50,7 +50,7 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
 
        in this file.  For instructions on how to convert
 
-       plain text passwords to base64 refer to
+       plain text passwords to base64 refer to `instructions <https://tml.readthedocs.io/en/latest/kube.html#how-to-store-secure-passwords-in-kubernetes>`_
    * - :ref:`mysql-storage.yml`
      - This is storage allocation for MySQL DB.
  
