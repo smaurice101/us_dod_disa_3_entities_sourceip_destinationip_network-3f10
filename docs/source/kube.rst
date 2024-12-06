@@ -90,7 +90,7 @@ kubectl Apply command
 
 .. attention::
 
-   MAKE SURE to update any tokens and passwords in the secrets.yml file:
+   MAKE SURE to update any tokens and passwords in the **secrets.yml** file:
 
           1. GITPASSWORD (MANDATORY)
              
@@ -99,6 +99,8 @@ kubectl Apply command
           3. KAFKACLOUDPASSWORD (OPTIONAL)
              
           4. MQTTPASSWORD (OPTIONAL)
+
+   For instructions on how to do this, refer to `instructions <https://tml.readthedocs.io/en/latest/kube.html#how-to-store-secure-passwords-in-kubernetes>`_
 
 .. code-block:: YAML
 
