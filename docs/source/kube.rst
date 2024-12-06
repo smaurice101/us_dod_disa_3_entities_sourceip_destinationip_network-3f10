@@ -117,7 +117,7 @@ secrets.yml
 .. important::
    You MUST store base64 passwords in this file and apply it to the Kubernetes cluster.  
 
-   Refer to section for instructions.
+   Refer to `instructions <https://tml.readthedocs.io/en/latest/kube.html#how-to-store-secure-passwords-in-kubernetes>`_.
 
 .. code-block:: YAML
       
