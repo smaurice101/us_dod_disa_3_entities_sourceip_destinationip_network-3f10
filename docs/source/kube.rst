@@ -153,7 +153,7 @@ mysql-storage.yml
         capacity:
           storage: 20Gi
         accessModes:
-          - ReadWriteOnce
+          - ReadWriteMany
         hostPath:
           path: "/mnt/data"
       ---
@@ -164,7 +164,7 @@ mysql-storage.yml
       spec:
         storageClassName: manual
         accessModes:
-          - ReadWriteOnce
+          - ReadWriteMany
         resources:
           requests:
             storage: 20Gi
