@@ -248,7 +248,6 @@ This is the Kafka service needed by TML pods - if using Kafka locally or on-prem
 
 .. code-block:: YAML
             
-      ################# kafka.yml
       apiVersion: apps/v1
       kind: Deployment
       metadata:
@@ -279,16 +278,10 @@ This is the Kafka service needed by TML pods - if using Kafka locally or on-prem
       apiVersion: v1
       kind: Service
       metadata:
-        name: kafka-service
-        labels:
-          app: kafka-service
+        name: kafkaservice
       spec:
-        type: NodePort #Exposes the service as a node ports
         ports:
         - port: 9092
-          name: p1
-          protocol: TCP
-          targetPort: 9092
         selector:
           app: kafka
 
