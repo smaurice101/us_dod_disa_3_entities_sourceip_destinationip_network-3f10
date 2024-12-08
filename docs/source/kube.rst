@@ -59,6 +59,12 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
      - This is the MySQL deployment YAML.
  
        It MUST be applied to your Kubernetes cluster.
+   * - :ref:`kafka.yml`
+     - This is the Kafka deployment YAML.
+ 
+       This is MANDATORY if using kafka locally or on-premise.
+
+       This is OPTIONAL is using Kafka Cloud. 
    * - :ref:`privategpt.yml`
      - This is the privateGPT deployment YAML.
  
@@ -234,6 +240,57 @@ mysql-db-deployment.yml
         - port: 3306
         selector:
           app: mysql
+
+kafka.yml
+------------
+
+This is the Kafka service needed by TML pods - if using Kafka locally or on-premise.
+
+.. code-block:: YAML
+            
+      ################# kafka.yml
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: kafka
+      spec:
+        selector:
+          matchLabels:
+            app: kafka
+        replicas: 1 # tells deployment to run 1 pods matching the template
+        template:
+          metadata:
+            labels:
+              app: kafka
+          spec:
+            containers:
+            - name: kafka
+              image: maadsdocker/kafka-amd64  # IF you DO NOT have NVIDIA GPU use: maadsdocker/tml-privategpt-no-gpu-amd64
+              env:
+              - name: KAFKA_HEAP_OPTS
+                value: "-Xmx512M -Xms512M"
+              - name: PORT
+                value: "9092"
+              - name: TSS
+                value: "0"
+              - name: KUBE
+                value: "1"
+      ---
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: kafka-service
+        labels:
+          app: kafka-service
+      spec:
+        type: NodePort #Exposes the service as a node ports
+        ports:
+        - port: 9092
+          name: p1
+          protocol: TCP
+          targetPort: 9092
+        selector:
+          app: kafka
 
 privategpt.yml
 ---------------
