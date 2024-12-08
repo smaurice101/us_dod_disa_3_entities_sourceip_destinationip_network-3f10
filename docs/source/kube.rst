@@ -64,7 +64,7 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
  
        This is MANDATORY if using kafka locally or on-premise.
 
-       This is OPTIONAL is using Kafka Cloud. 
+       This is OPTIONAL if using Kafka Cloud. 
    * - :ref:`privategpt.yml`
      - This is the privateGPT deployment YAML.
  
