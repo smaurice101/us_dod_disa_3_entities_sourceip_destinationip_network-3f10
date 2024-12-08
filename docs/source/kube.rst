@@ -278,7 +278,7 @@ This is the Kafka service needed by TML pods - if using Kafka locally or on-prem
       apiVersion: v1
       kind: Service
       metadata:
-        name: kafkaservice
+        name: kafka-service
       spec:
         ports:
         - port: 9092
