@@ -274,6 +274,8 @@ This is the Kafka service needed by TML pods - if using Kafka locally or on-prem
                 value: "0"
               - name: KUBE
                 value: "1"
+              - name: KUBEBROKERHOST
+                value: "kafka-service:9092"      
       ---
       apiVersion: v1
       kind: Service
