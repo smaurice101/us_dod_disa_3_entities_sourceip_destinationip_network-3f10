@@ -200,6 +200,9 @@ mysql-db-deployment.yml
             containers:
             - image: maadsdocker/mysql:latest
               name: mysql
+              resources:
+               limits:
+                memory: "512Mi"
               env:
               - name: MYSQL_ROOT_PASSWORD
                 value: "raspberry"
@@ -216,7 +219,7 @@ mysql-db-deployment.yml
               - name: MYSQLPASS
                 value: "raspberry"
               - name: MYSQLUSER
-                value: "root"                  
+                value: "root"
               ports:
               - containerPort: 3306
                 name: mysql
