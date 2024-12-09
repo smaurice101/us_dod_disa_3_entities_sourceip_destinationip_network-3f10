@@ -203,6 +203,7 @@ mysql-db-deployment.yml
               resources:
                limits:
                 memory: "512Mi"
+                cpu: "1500m"
               env:
               - name: MYSQL_ROOT_PASSWORD
                 value: "raspberry"
