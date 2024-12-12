@@ -434,7 +434,7 @@ qdrant.yml
 Kubernetes Dashboard Visualization
 ----------------------------------
 
-To visualize the dashboard you need to forward ports to your solution **deployment in Kubernetes**.  For this solution, the port forward command would be:
+To visualize the dashboard you need to forward ports to your solution **service in Kubernetes**.  For this solution, the port forward command would be:
 
 .. code-block::
 
