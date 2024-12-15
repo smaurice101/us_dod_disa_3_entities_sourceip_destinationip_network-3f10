@@ -464,9 +464,9 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
    **STEP 2:  In Linux Add tss.tml domain name to /etc/hosts file**
 
-    a. Edit your /etc/hosts file 
+    a. Edit your **/etc/hosts** file 
 
-    b. add an entry: 
+    b. add an entry to **/etc/hosts**: 
 
       .. code-block::
      
@@ -485,7 +485,9 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
           127.0.0.1 tss.tml
 
-    c. Save the file
+    c. Save the file 
+
+    d. copy it back to **C:\\Windows\\System32\\drivers\\etc\\hosts**
 
    **STEP 3:  In a new Linux terminal you MUST turn on **minikube tunnel** type
 
