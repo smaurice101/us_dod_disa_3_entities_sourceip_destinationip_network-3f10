@@ -495,7 +495,7 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
       minikube tunnel
 
-   **STEP 4:  Apply **nginx-ingress.yml** to your kubernetes cluster.  First you need to save it locally then apply it:
+   **STEP 4:  Apply nginx-ingress.yml to your kubernetes cluster.  First you need to save it locally then apply it:**
 
    .. code-block::
 
@@ -509,6 +509,9 @@ You are now ready to run the Dashboard using Ingress load balancing.
 
 Ingress Dashboard Visualization
 -------------------
+
+Copy and paste this URL below in your browser and start streaming.  Because you are now using INGRESS, Kubernetes will perform load balancing on the streaming data.
+
 .. code-block::
 
    --visualizationurling--
