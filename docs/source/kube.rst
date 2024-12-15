@@ -462,20 +462,28 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
       minikube addons enable ingress-dns
 
-   **STEP 2:  In Linux Add tss.tml domain name to /etc/hosts file
+   **STEP 2:  In Linux Add tss.tml domain name to /etc/hosts file**
 
     a. Edit your /etc/hosts file 
 
-    b. add an entry: 127.0.0.1 tss.tml
+    b. add an entry: 
+
+      .. code-block::
+     
+         127.0.0.1 tss.tml
 
     c. Save the file
 
    **STEP 2b:  In Windows Add tss.tml domain name to C:\Windows\System32\drivers\etc**
 
-    a. Edit your **C:\Windows\System32\drivers\etc\hosts** file  (Note: You may need to COPY the hosts file to another directory, then edit the file, then copy it back to 
-       **C:\Windows\System32\drivers\etc**
+    a. Edit your **C:\\Windows\\System32\\drivers\\etc\\hosts** file  (Note: You may need to COPY the hosts file to another directory, then edit the file, then copy it back to 
+       **C:\\Windows\\System32\\drivers\\etc\\hosts**
 
-    b. add an entry: 127.0.0.1 tss.tml
+    b. add an entry: 
+
+       .. code-block:: 
+
+          127.0.0.1 tss.tml
 
     c. Save the file
 
