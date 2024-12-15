@@ -474,7 +474,7 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
     c. Save the file
 
-   **STEP 2b:  In Windows Add tss.tml domain name to C:\Windows\System32\drivers\etc**
+   **STEP 2b:  In Windows Add tss.tml domain name to C:\\Windows\\System32\\drivers\\etc**
 
     a. Edit your **C:\\Windows\\System32\\drivers\\etc\\hosts** file  (Note: You may need to COPY the hosts file to another directory, then edit the file, then copy it back to 
        **C:\\Windows\\System32\\drivers\\etc\\hosts**
