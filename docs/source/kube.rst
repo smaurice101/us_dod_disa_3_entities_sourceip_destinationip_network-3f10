@@ -446,6 +446,64 @@ After you forward the ports then copy/paste the viusalization URL below and run 
 
    --visualizationurl--
 
+Scaling with NGINX Ingress and Ingress Controller
+-------------------------------------
+
+All TML solutions will scale with NGINX ingress to perform load-balancing.  But, before you can use ingress - ingress MUST be enable in Kubernetes cluster.  Follow these steps:
+
+.. important::
+   **STEP 1:  To turn on ingress in minikube type:**
+
+   .. code-block::
+
+      minikube addons enable ingress
+
+   .. code-block::
+
+      minikube addons enable ingress-dns
+
+   **STEP 2:  In Linux Add tss.tml domain name to /etc/hosts file
+
+    a. Edit your /etc/hosts file 
+
+    b. add an entry: 127.0.0.1 tss.tml
+
+    c. Save the file
+
+   **STEP 2b:  In Windows Add tss.tml domain name to C:\Windows\System32\drivers\etc**
+
+    a. Edit your **C:\Windows\System32\drivers\etc\hosts** file  (Note: You may need to COPY the hosts file to another directory, then edit the file, then copy it back to 
+       **C:\Windows\System32\drivers\etc**
+
+    b. add an entry: 127.0.0.1 tss.tml
+
+    c. Save the file
+
+   **STEP 3:  In a new Linux terminal you MUST turn on **minikube tunnel** type
+
+   .. code-block::
+
+      minikube tunnel
+
+   **STEP 4:  Apply **nginx-ingress.yml** to your kubernetes cluster.  First you need to save it locally then apply it:
+
+   .. code-block::
+
+      --ingress--
+
+   .. code-block::
+
+      kubectl apply -f nginx-ingress.yml
+
+You are now ready to run the Dashboard using Ingress load balancing.
+
+Ingress Dashboard Visualization
+-------------------
+.. code-block::
+
+   --visualizationurling--
+
+
 Kubernetes Pod Access Commands
 ---------------------
 
