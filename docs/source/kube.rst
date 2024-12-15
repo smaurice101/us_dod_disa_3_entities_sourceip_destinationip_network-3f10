@@ -449,7 +449,7 @@ After you forward the ports then copy/paste the viusalization URL below and run 
 Scaling with NGINX Ingress and Ingress Controller
 -------------------------------------
 
-All TML solutions will scale with NGINX ingress to perform load-balancing.  But, before you can use ingress - ingress MUST be enable in Kubernetes cluster.  Follow these steps:
+All TML solutions will scale with NGINX ingress to perform load-balancing.  But, before you can use ingress - ingress MUST be enabled in Kubernetes cluster.  Follow these steps:
 
 .. important::
    **STEP 1:  To turn on ingress in minikube type:**
