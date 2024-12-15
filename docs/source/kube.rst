@@ -489,7 +489,7 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
     d. copy it back to **C:\\Windows\\System32\\drivers\\etc\\hosts**
 
-   **STEP 3:  In a new Linux terminal you MUST turn on **minikube tunnel** type
+   **STEP 3:  In a new Linux terminal you MUST turn on minikube tunnel type:**
 
    .. code-block::
 
