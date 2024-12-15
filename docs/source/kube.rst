@@ -75,6 +75,16 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
        This is OPTIONAL.  However, it must be 
  
        applied if using Step 9 DAG.
+   * - NGINX Ingress Yaml (Optional)
+     - If you are scaling your TML solution you must
+
+       apply the nginx-ingress.yml; this yaml is 
+
+       auto-generated for every TML solution.
+
+       For more details see section 
+
+       :ref:`Scaling with NGINX Ingress and Ingress Controller`
 
 kubectl Apply command
 -----------------
