@@ -512,7 +512,6 @@ nginx-ingress---nginxname--.yml
 
    .. code-block::
 
-      #########nginx-ingress---nginxname--.yml
       --ingress--
 
    .. code-block::
