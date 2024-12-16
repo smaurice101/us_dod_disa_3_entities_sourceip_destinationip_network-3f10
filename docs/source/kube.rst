@@ -507,6 +507,7 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
    **STEP 4:  Apply nginx-ingress.yml to your kubernetes cluster.  First you need to save it locally then apply it:**
 
+   **NGINX-INGRESS.yml**
    .. code-block::
 
       --ingress--
