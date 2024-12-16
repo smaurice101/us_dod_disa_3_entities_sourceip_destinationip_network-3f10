@@ -75,10 +75,10 @@ Based on your TML solution [--solutionname--] - if you want to scale your applic
        This is OPTIONAL.  However, it must be 
  
        applied if using Step 9 DAG.
-   * - :ref:`nginx-ingress.yml`
+   * - :ref:`nginx-ingress--nginxname--.yml`
      - If you are scaling your TML solution you must
 
-       apply the nginx-ingress.yml; this yaml is 
+       apply the nginx-ingress--nginxname--.yml; this yaml is 
 
        auto-generated for every TML solution.
 
@@ -505,9 +505,9 @@ All TML solutions will scale with NGINX ingress to perform load-balancing.  But,
 
       minikube tunnel
 
-   **STEP 4:  Apply nginx-ingress.yml to your kubernetes cluster.  First you need to save it locally then apply it:**
+   **STEP 4:  Apply nginx-ingress--nginxname--.yml to your kubernetes cluster.  First you need to save it locally then apply it:**
 
-nginx-ingress.yml
+nginx-ingress--nginxname--.yml
 -------------
 
    .. code-block::
@@ -516,7 +516,7 @@ nginx-ingress.yml
 
    .. code-block::
 
-      kubectl apply -f nginx-ingress.yml
+      kubectl apply -f nginx-ingress--nginxname--.yml
 
 You are now ready to run the Dashboard using Ingress load balancing.
 
