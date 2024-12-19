@@ -528,6 +528,9 @@ You can make secure connection through the NGINX controller to your TML service 
 .. note::
    Note that the REST API service is unencrypted, but very useful if you don't have the need for security inside your VM.
 
+.. attenton::
+   These configurations is for advanced, yet more powerful and secure usage, of TML.
+
 Here are the Steps to follow.
 """""""""""""""""""""""""""""""""""
 
@@ -536,6 +539,9 @@ Step 1: Get Server Certificates
 
 To utilize the secure gRPC service you must have valid security certificates for each server.  You can self-sign your own certificates by following the steps here: 
 `Steps to Self-Signing Certificates <https://github.com/smaurice101/raspberrypi/blob/main/tml-airflow/certs/san-keycreationprocess.md>`_
+
+.. tip::
+   You can download the all the certificates from the `certs repo <https://github.com/smaurice101/raspberrypi/tree/main/tml-airflow/certs>`_
 
 Step 2: Apply the Server Certificates to Kubernetes Cluster
 ^^^^^^^^^^^^^^^^^^
@@ -572,6 +578,58 @@ Save the Yaml in Step 2 locally, then apply it to the cluster.
     kubectl apply -f secret-tls.yml
 
 You are done!  You know have a secure connection betweenn your client gRPC application and the TML solution.
+
+Using gRPcurl to Write Data to the TML gRPC Server
+-------------------------------------
+
+gRPcurl is a utility for writing data to your gRPC solution.
+
+.. tip::
+   You can install gRPCurl from `here <https://github.com/fullstorydev/grpcurl/releases>`_.
+
+.. important::
+   You must download four (4) files to your local machines:
+
+    1. ca.crt
+      a. Get it from `here <https://github.com/smaurice101/raspberrypi/tree/main/tml-airflow/certs>`_
+
+    2. tml_grpc.proto, tml_grpc_pb2_grpc.py, tml_grpc_pb2.py
+      a.  Get them from `here <https://github.com/smaurice101/raspberrypi/tree/main/tml-airflow/dags>`_
+
+    
+Run the gRPCurl Commands
+""""""""""""""""""""""""""
+
+Once your TML solution using gRPC is running in Kubernetes you can test it by sending data with these commands:
+
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto  tml.tss:443 list tmlproto.Tmlproto
+
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto  tml.tss:443 list
+
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto  tml.tss:443 describe tmlproto.Tmlproto.GetServerResponse
+
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto  tml.tss:443 describe .tmlproto.Message
+
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto -msg-template tml.tss:443 describe .tmlproto.Message
+
+Send data to the sever:
+""""""""""""""""""""
+.. code-block::
+
+   grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto -d '{"message":"admin yeah!!"}' tml.tss:443 tmlproto.Tmlproto/GetServerResponse
+
+
+
 
 Ingress Dashboard Visualization
 -------------------
