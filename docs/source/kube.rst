@@ -520,6 +520,15 @@ nginx-ingress---nginxname--.yml
 
 You are now ready to run the Dashboard using Ingress load balancing.
 
+Ingress Dashboard Visualization
+-------------------
+
+Copy and paste this URL below in your browser and start streaming.  Because you are now using INGRESS, Kubernetes will perform load balancing on the streaming data.
+
+.. code-block::
+
+   --visualizationurling--
+
 Making Secure TLS Connection with gRPC
 -----------------------
 
@@ -627,16 +636,6 @@ Send data to the sever:
 .. code-block::
 
    grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto -d '{"message":"admin yeah!!"}' tml.tss:443 tmlproto.Tmlproto/GetServerResponse
-
-
-Ingress Dashboard Visualization
--------------------
-
-Copy and paste this URL below in your browser and start streaming.  Because you are now using INGRESS, Kubernetes will perform load balancing on the streaming data.
-
-.. code-block::
-
-   --visualizationurling--
 
 
 Kubernetes Pod Access Commands
