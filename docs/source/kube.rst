@@ -629,8 +629,6 @@ Send data to the sever:
    grpcurl -insecure -H "client-api-protocol: 1,1" -cacert ca.crt -import-path . -proto tml_grpc.proto -d '{"message":"admin yeah!!"}' tml.tss:443 tmlproto.Tmlproto/GetServerResponse
 
 
-
-
 Ingress Dashboard Visualization
 -------------------
 
