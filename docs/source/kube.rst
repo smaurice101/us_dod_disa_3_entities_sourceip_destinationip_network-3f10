@@ -529,7 +529,7 @@ You can make secure connection through the NGINX controller to your TML service 
    Note that the REST API service is unencrypted, but very useful if you don't have the need for security inside your VM.
 
 .. attenton::
-   These configurations is for advanced, yet more powerful and secure usage, of TML.
+   These configurations are for advanced, yet more powerful and secure, usage of TML.
 
 Here are the Steps to follow.
 """""""""""""""""""""""""""""""""""
